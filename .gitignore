@@ -1,0 +1,38 @@
+# Terraform and OpenTofu files
+*.tfstate
+*.tfstate.*
+.crash
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+.terraform/
+.terraform.lock.hcl
+
+# Terragrunt-specific files
+.terragrunt-cache/
+
+# Logs and debug output
+*.log
+*.tfplan
+*.backup
+
+# Sensitive files
+secrets.auto.tfvars
+*.key
+*.pem
+*.enc
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+*.tmp
+*.bak
+*.old
