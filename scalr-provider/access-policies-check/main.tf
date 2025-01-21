@@ -7,13 +7,15 @@ terraform {
   }
 }
 
-provider "scalr" { //Fill with your hostname and token with corresponded permissions
+provider "scalr" {
+  //Fill with your hostname and token with corresponded permissions
   hostname = ""
   token    = ""
 }
 
 locals {
-  account_read_only_users = [ //Fill list with user emails from corresponded acc
+  account_read_only_users = [
+    //Fill list with user emails from corresponded acc
     "",
     "",
     ""
@@ -32,13 +34,25 @@ variable "scalr_read_only_role_id" {
   default     = "role-"
 }
 
+#resource "scalr_role" "example-read-only" {
+#  name        = "Reader"
+#  account_id  = var.scalr_account_id
+#  description = "Test with created in config"
+#
+#  permissions = [
+#    "accounts:read",
+#    "integrations:read"
+#  ]
+#}
+
 module "account_read_only_users" {
-  for_each = toset(local.account_read_only_users)
-  source   = "./modules/scalr_permission_assignment/"
-  email    = each.key
-  type     = "account"
-  scope_id = var.scalr_account_id
-  role_id  = var.scalr_read_only_role_id
+  for_each  = toset(local.account_read_only_users)
+  source    = "./modules/scalr_permission_assignment/"
+  email     = each.key
+  type      = "account"
+  scope_id  = var.scalr_account_id
+  role_id   = var.scalr_read_only_role_id
+  //  role_id  = scalr_role.example-read-only.id
   providers = {
     scalr = scalr
   }
