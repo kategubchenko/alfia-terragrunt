@@ -1,0 +1,14 @@
+staging:
+  regions:
+    us-east-1:
+      tags:
+        team: qa
+    eu-central-1:
+      tags:
+        team: qa
+
+production:
+  regions:
+    us-east-2:
+      tags:
+        team: ops

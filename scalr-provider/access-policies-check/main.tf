@@ -47,7 +47,7 @@ variable "scalr_read_only_role_id" {
 
 module "account_read_only_users" {
   for_each  = toset(local.account_read_only_users)
-  source    = "./modules/scalr_permission_assignment/"
+  source    = "modules/scalr_permission_assignment"
   email     = each.key
   type      = "account"
   scope_id  = var.scalr_account_id
