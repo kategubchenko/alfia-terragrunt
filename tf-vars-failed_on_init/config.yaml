@@ -5,7 +5,11 @@ staging:
         team: qa
     eu-central-1:
       tags:
-        team: qa
+        team: aqa
+    eu-central-2:
+      tags:
+        team: dev
+    
 
 production:
   regions:
