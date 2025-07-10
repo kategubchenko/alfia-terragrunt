@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket         = "kate-terraform-state-bucket-for-terragrunt"
     key            = "global/s3/terraform.tfstate"
-    region         = "us-west-2"
+    region         = "us-east-1"
     encrypt        = true
    // dynamodb_table = "terraform-locks"
   }
