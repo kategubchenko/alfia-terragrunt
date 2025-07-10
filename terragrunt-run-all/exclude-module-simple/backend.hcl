@@ -6,7 +6,7 @@ generate "backend" {
   contents = <<EOF
 terraform {
   backend "s3" {
-    bucket         = "alfiia-terraform-state-bucket"
+    bucket         = "kate-terraform-state-bucket-for-terragrunt"
     key            = "global/s3/terraform.tfstate"
     region         = "us-west-2"
     encrypt        = true
